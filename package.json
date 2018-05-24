@@ -1,7 +1,9 @@
 {
   "name": "bjeco",
+  "description": "https://bje.co",
   "version": "0.1.0",
   "private": true,
+  "repository": "https://github.com/brianespinosa/bjeco.git",
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
