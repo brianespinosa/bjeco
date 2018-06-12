@@ -13,6 +13,7 @@
     "@types/node": "^10.3.2",
     "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.6",
+    "jest-junit": "^4.0.0",
     "normalize.css": "^8.0.0",
     "react-scripts-ts": "2.16.0",
     "typescript": "^2.9.1"
@@ -20,14 +21,7 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "**/src/**/*.{tsx}",
-      "!**/node_modules/**",
-      "!**/lib/**"
-    ],
-    "coverageReporters": ["lcov"]
+    "test": "react-scripts-ts test --env=jsdom",
+    "test:ci": "react-scripts-ts test --env=jsdom --ci --coverage --testResultsProcessor ./node_modules/jest-junit"
   }
 }
