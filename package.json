@@ -22,7 +22,7 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "test:ci": "react-scripts-ts test --env=jsdom --ci --testResultsProcessor ./node_modules/jest-junit"
+    "test:ci": "react-scripts-ts test --env=jsdom --ci --coverage --testResultsProcessor ./node_modules/jest-junit"
   },
   "jest": {
     "collectCoverageFrom" : [
