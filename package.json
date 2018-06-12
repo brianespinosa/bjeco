@@ -13,6 +13,7 @@
     "@types/node": "^10.3.2",
     "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.6",
+    "jest-junit": "^5.0.0",
     "normalize.css": "^8.0.0",
     "react-scripts-ts": "2.16.0",
     "typescript": "^2.9.1"
@@ -28,6 +29,8 @@
       "!**/node_modules/**",
       "!**/lib/**"
     ],
-    "coverageReporters": ["lcov"]
+    "coverageReporters": [
+      "lcov"
+    ]
   }
 }
