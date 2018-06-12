@@ -10,6 +10,9 @@ class App extends Component {
         <p>
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <p>
+          Test some more.
+        </p>
       </Fragment>
     );
   }
