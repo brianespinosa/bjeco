@@ -5,9 +5,13 @@
 version: 2
 jobs:
   build:
+    environment:
+      CC_TEST_REPORTER_ID: 068aba62566a3bdb294f73c1f7beed93a8634da3e7a003621dcd11393ce57cd2
+      
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      # - image: circleci/node:7.10
+      - image: circleci/php:7.1.9-browsers
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -33,19 +37,27 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
-      # run tests!
-      # - run: yarn test
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
       
       - run:
           name: Jest Test Suite
-          command: "yarn test:ci"
+          command: |
+            ./cc-test-reporter before-build
+            yarn test:ci
+            ./cc-test-reporter after-build --exit-code $?
           environment:
-              JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
+            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
               
       - store_test_results:
           path: reports/junit
           
       - store_artifacts:
           path: reports/junit
+          
+
 
 
