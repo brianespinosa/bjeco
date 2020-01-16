@@ -6,6 +6,9 @@ webhook_url:
 sections:
 - type: heading
   label: Content
+- type: document
+  path: test
+  label: Page
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
