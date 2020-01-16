@@ -6,6 +6,11 @@ webhook_url:
 sections:
 - type: heading
   label: Content
+- type: directory
+  path: posts
+  label: Posts
+  create: documents
+  match: "**/*"
 - type: document
   path: test
   label: Page
