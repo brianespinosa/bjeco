@@ -26,8 +26,10 @@
     "lint-staged": ">=10",
     "prettier": "2.0.5"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true,
+    "jsxSingleQuote": true
   },
   "browserslist": {
     "production": [
