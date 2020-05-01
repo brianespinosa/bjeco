@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.nodePath": ".vscode/pnpify",
+  "prettier.prettierPath": ".vscode/pnpify/prettier/index.js"
+}
