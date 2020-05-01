@@ -2,14 +2,8 @@
 
 # dependencies
 /node_modules
-
-# yarn v1 w/ PnP
-/.pnp
-.pnp.js
-
-# yarn v2
 .yarn/*
-# !.yarn/cache
+!.yarn/cache
 !.yarn/releases
 !.yarn/plugins
 
