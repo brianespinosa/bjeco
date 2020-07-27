@@ -16,7 +16,7 @@ jobs:
           command: yarn test --ci --reporters=jest-junit
           name: Run tests
       - store_test_results:
-          path: coverage
+          path: junit.xml
 
 workflows:
   test:
