@@ -60,4 +60,7 @@
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
   }
+  "jest-junit":{
+    "output": "./coverage/junit.xml"
+  }
 }
