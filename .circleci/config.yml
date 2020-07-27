@@ -13,10 +13,14 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: yarn test --ci --reporters=jest-junit
+          command: yarn test --ci --runInBand --reporters=default --reporters=jest-junit
           name: Run tests
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./coverage/junit/
       - store_test_results:
-          path: junit.xml
+          path: ./coverage/junit/
+      - store_artifacts:
+          path: ./coverage/junit
 
 workflows:
   test:
