@@ -20,7 +20,7 @@ jobs:
       - store_test_results:
           path: ./coverage/junit/
       - store_artifacts:
-          path: ./coverage/junit
+          path: ./coverage
 
 workflows:
   test:
