@@ -13,10 +13,10 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: yarn test
+          command: yarn test --ci --reporters=jest-junit
           name: Run tests
       - store_test_results:
-          path: test-results
+          path: junit.xml
 
 workflows:
   test:
