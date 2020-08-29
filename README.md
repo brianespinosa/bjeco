@@ -1,4 +1,4 @@
-<img src="src/images/bje.svg" width="120">
+<img style='float:left;margin-right:1em;' src="src/images/bje.svg" width="120">
 
 # bjeco
 
