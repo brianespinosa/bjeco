@@ -1,13 +1,18 @@
-import React from 'react';
-import { useRoutes } from 'react-router-dom';
-
-import Splash from '../pages/Splash';
 import Calculators from '../pages/Calculators';
+import React from 'react';
+import Splash from '../pages/Splash';
+import { useRoutes } from 'react-router-dom';
 
 const App = () =>
   useRoutes([
-    { path: '/', element: <Splash /> },
-    { path: 'calc/*', element: <Calculators /> },
+    {
+      element: <Splash />,
+      path: '/',
+    },
+    {
+      element: <Calculators />,
+      path: 'calc/*',
+    },
   ]);
 
 export default App;

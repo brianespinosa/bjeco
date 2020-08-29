@@ -1,7 +1,7 @@
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
 
 describe('app', () => {
   it('renders a splash logo', () => {
