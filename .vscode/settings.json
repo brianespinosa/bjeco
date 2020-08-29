@@ -1,5 +1,32 @@
 {
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cssModules.camelCase": false,
+  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "eslint.nodePath": ".vscode/pnpify",
-  "prettier.prettierPath": ".vscode/pnpify/prettier/index.js"
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "html": {
+      "attr_quotes": "single"
+    },
+    "javascript": {
+      "self_closing_tag": true
+    }
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "git.autofetch": true,
+  "prettier.requireConfig": true,
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#567ebc",
+    "activityBar.activeBorder": "#dce0e6",
+    "activityBar.background": "#2b4c7e",
+    "activityBar.foreground": "#dce0e6",
+    "activityBar.inactiveForeground": "#567ebc",
+    "activityBarBadge.background": "#dce0e6",
+    "activityBarBadge.foreground": "#2b4c7e"
+  }
 }

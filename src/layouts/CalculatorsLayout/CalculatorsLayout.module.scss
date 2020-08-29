@@ -1,0 +1,13 @@
+._ {
+  max-width: 60em;
+  padding: 2em;
+  margin: 0 auto;
+
+  & :first-child {
+    margin-top: 0;
+  }
+
+  & :last-child {
+    margin-bottom: 0;
+  }
+}

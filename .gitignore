@@ -6,6 +6,7 @@
 !.yarn/cache
 !.yarn/releases
 !.yarn/plugins
+.pnp
 
 # testing
 /coverage

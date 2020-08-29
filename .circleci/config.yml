@@ -1,63 +1,78 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
+version: 2.1
+
+orbs:
+  node: circleci/node@3.0.1
+
 jobs:
-  build:
-    environment:
-      CC_TEST_REPORTER_ID: 068aba62566a3bdb294f73c1f7beed93a8634da3e7a003621dcd11393ce57cd2
-      
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:7.10
-      # - image: circleci/php:7.1.9-browsers
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
+  install:
+    executor:
+      name: node/default
+      tag: '14.5.0'
     steps:
       - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: yarn install
-
+      - node/install-packages:
+          pkg-manager: yarn
       - save_cache:
+          key: bjeco-INSTALLED-{{ .Revision }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-        
+            - ~/
+
+  test:
+    executor:
+      name: node/default
+      tag: '14.5.0'
+    steps:
+      - restore_cache:
+          key: bjeco-INSTALLED-{{ .Revision }}
       - run:
-          name: Setup Code Climate test-reporter
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
-      
-      - run:
-          name: Jest Test Suite
-          command: |
-            ./cc-test-reporter before-build
-            yarn test:ci
-            ./cc-test-reporter after-build --exit-code $?
+          command: yarn test --ci --runInBand --reporters=default --reporters=jest-junit
+          name: Run Jest
           environment:
-            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
-              
+            JEST_JUNIT_OUTPUT_DIR: ./coverage/junit/
       - store_test_results:
-          path: reports/junit
-          
+          path: ./coverage/junit/
       - store_artifacts:
-          path: reports/junit
-          
+          path: ./coverage
 
+  lint:
+    executor:
+      name: node/default
+      tag: '14.5.0'
+    steps:
+      - restore_cache:
+          key: bjeco-INSTALLED-{{ .Revision }}
+      - run:
+          name: Run Eslint
+          command: yarn lint --format junit --output-file ./coverage/eslint.xml
+      - store_test_results:
+          path: ./coverage
+      - store_artifacts:
+          path: ./coverage
 
+  build:
+    executor:
+      name: node/default
+      tag: '14.5.0'
+    steps:
+      - restore_cache:
+          key: bjeco-INSTALLED-{{ .Revision }}
+      - run:
+          name: Build App
+          command: yarn build
+      - store_artifacts:
+          path: ./build
 
+workflows:
+  quality:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
+      - build:
+          requires:
+            - lint
+            - test

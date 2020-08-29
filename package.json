@@ -1,35 +1,29 @@
 {
   "name": "bjeco",
-  "description": "https://bje.co",
   "version": "0.1.0",
   "private": true,
+  "description": "https://bje.co",
   "repository": "https://github.com/brianespinosa/bjeco.git",
-  "installConfig": {
-    "pnp": true
+  "license": "MIT",
+  "scripts": {
+    "build": "react-scripts build",
+    "lint": "eslint ./",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
-  "engines": {
-    "node": "^12.16.3"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "normalize.css": "^8.0.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
-  "devDependencies": {
-    "@yarnpkg/pnpify": "^2.0.0-rc.22",
-    "eslint": "^6.8.0",
-    "husky": ">=4",
-    "lint-staged": ">=10",
-    "prettier": "2.0.5"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "singleQuote": true,
-    "jsxSingleQuote": true
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,mdx,html,css,scss}": [
+      "prettier --write"
+    ]
   },
   "browserslist": {
     "production": [
@@ -43,18 +37,38 @@
       "last 1 safari version"
     ]
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "prettier": "@bjeco/prettier-config",
+  "eslintConfig": {
+    "extends": "@bjeco"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "dependencies": {
+    "history": "5.0.0",
+    "node-sass": "4.14.1",
+    "normalize.css": "8.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router-dom": "6.0.0-beta.0",
+    "react-scripts": "3.4.3",
+    "typescript": "3.9.7"
   },
-  "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+  "devDependencies": {
+    "@bjeco/eslint-config": "*",
+    "@bjeco/prettier-config": "*",
+    "@testing-library/dom": "7.21.5",
+    "@testing-library/jest-dom": "5.11.1",
+    "@testing-library/react": "10.4.7",
+    "@testing-library/user-event": "12.0.15",
+    "eslint-plugin-jest": "23.20.0",
+    "eslint-plugin-json-format": "2.0.1",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-react": "7.20.6",
+    "eslint-plugin-react-hooks": "4.1.0",
+    "eslint-plugin-unicorn": "19.0.1",
+    "husky": "1.3.1",
+    "jest-junit": "11.1.0",
+    "lint-staged": "10.2.11"
+  },
+  "engines": {
+    "node": "14.5.0"
   }
 }
