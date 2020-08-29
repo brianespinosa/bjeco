@@ -3,12 +3,15 @@ import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-test('Renders a splash logo', () => {
-  const { getByRole } = render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  );
-  const linkElement = getByRole(/img/i);
-  expect(linkElement).toBeInTheDocument();
+describe('app', () => {
+  it('renders a splash logo', () => {
+    expect.assertions(1);
+    const { getByRole } = render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+    const linkElement = getByRole(/img/i);
+    expect(linkElement).toBeInTheDocument();
+  });
 });

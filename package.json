@@ -1,12 +1,45 @@
 {
   "name": "bjeco",
-  "description": "https://bje.co",
   "version": "0.1.0",
   "private": true,
+  "description": "https://bje.co",
   "repository": "https://github.com/brianespinosa/bjeco.git",
   "license": "MIT",
-  "engines": {
-    "node": "^14.5.0"
+  "scripts": {
+    "build": "react-scripts build",
+    "lint": "eslint ./",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,mdx,html,css,scss}": [
+      "prettier --write"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "prettier": "@bjeco/prettier-config",
+  "eslintConfig": {
+    "extends": "@bjeco"
   },
   "dependencies": {
     "history": "5.0.0",
@@ -25,45 +58,17 @@
     "@testing-library/jest-dom": "5.11.1",
     "@testing-library/react": "10.4.7",
     "@testing-library/user-event": "12.0.15",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "eslint-plugin-unicorn": "^21.0.0",
     "husky": "1.3.1",
     "jest-junit": "11.1.0",
-    "lint-staged": "10.2.11",
-    "prettier": "2.0.5"
+    "lint-staged": "10.2.11"
   },
-  "eslintConfig": {
-    "extends": "@bjeco"
-  },
-  "prettier": "@bjeco/prettier-config",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "lint": "eslint ./"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{md,mdx,html,css,scss}": [
-      "prettier --write"
-    ]
+  "engines": {
+    "node": "^14.5.0"
   }
 }
