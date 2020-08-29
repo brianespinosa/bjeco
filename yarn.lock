@@ -1149,9 +1149,9 @@
     to-fast-properties "^2.0.0"
 
 "@bjeco/eslint-config@*":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@bjeco/eslint-config/-/eslint-config-1.1.0.tgz#38f3c72896863e8bf8b55c544a702922297b7e15"
-  integrity sha512-iaWibCstYB5Wg5mC/GKUhCmB0qDjnitbxJ8W2cjQ0xtSygLGmmEA3vwANHpLaabkyl4eHQv9zhRLIa4Psb3Eng==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@bjeco/eslint-config/-/eslint-config-1.2.0.tgz#cc16f17cd8c80ca49d40b3016b33ca897c88accd"
+  integrity sha512-MJ0XvCIJGIubNGXGcLPa0K/cwbGvKxX6FNCZgdSowo+NoTw8e0P1+0lU+gshbZgJkUxk2sgw7bFrEqCiRilYBg==
 
 "@bjeco/prettier-config@*":
   version "0.1.5"
