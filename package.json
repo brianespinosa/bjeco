@@ -6,13 +6,9 @@
   "repository": "https://github.com/brianespinosa/bjeco.git",
   "license": "MIT",
   "engines": {
-    "node": "^12.16.3"
+    "node": "^14.5.0"
   },
   "dependencies": {
-    "@testing-library/dom": "7.21.5",
-    "@testing-library/jest-dom": "5.11.1",
-    "@testing-library/react": "10.4.7",
-    "@testing-library/user-event": "12.0.15",
     "history": "5.0.0",
     "node-sass": "4.14.1",
     "normalize.css": "8.0.1",
@@ -23,17 +19,21 @@
     "typescript": "3.9.7"
   },
   "devDependencies": {
-    "eslint": "6.8.0",
-    "husky": "4.2.5",
+    "@bjeco/eslint-config": "*",
+    "@bjeco/prettier-config": "*",
+    "@testing-library/dom": "7.21.5",
+    "@testing-library/jest-dom": "5.11.1",
+    "@testing-library/react": "10.4.7",
+    "@testing-library/user-event": "12.0.15",
+    "husky": "1.3.1",
     "jest-junit": "11.1.0",
     "lint-staged": "10.2.11",
     "prettier": "2.0.5"
   },
-  "prettier": {
-    "tabWidth": 2,
-    "singleQuote": true,
-    "jsxSingleQuote": true
+  "eslintConfig": {
+    "extends": "@bjeco"
   },
+  "prettier": "@bjeco/prettier-config",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -50,7 +50,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "lint": "eslint ./"
   },
   "husky": {
     "hooks": {
@@ -58,6 +58,12 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,mdx,html,css,scss}": [
+      "prettier --write"
+    ]
   }
 }
