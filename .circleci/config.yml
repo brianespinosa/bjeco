@@ -49,18 +49,18 @@ jobs:
       - store_artifacts:
           path: ./coverage
 
-  # build:
-  #   executor:
-  #     name: node/default
-  #     tag: '14.5.0'
-  #   steps:
-  #     - restore_cache:
-  #         key: bjeco-INSTALLED-{{ .Revision }}
-  #     - run:
-  #         name: Build App
-  #         command: yarn build
-  #     - store_artifacts:
-  #         path: ./build
+  build:
+    executor:
+      name: node/default
+      tag: '14.5.0'
+    steps:
+      - restore_cache:
+          key: bjeco-INSTALLED-{{ .Revision }}
+      - run:
+          name: Build App
+          command: yarn build
+      - store_artifacts:
+          path: ./build
 
 workflows:
   quality:
@@ -72,7 +72,7 @@ workflows:
       - test:
           requires:
             - install
-      # - build:
-      #     requires:
-      #       - lint
-      #       - test
+      - build:
+          requires:
+            - lint
+            - test
