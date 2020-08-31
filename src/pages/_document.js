@@ -10,7 +10,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>bje</title>
           <link href='/favicon.ico' rel='icon' />
 
           <link
