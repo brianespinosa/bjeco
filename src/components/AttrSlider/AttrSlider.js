@@ -43,7 +43,7 @@ const AttributeSlider = ({ attribute, label, defaultValue, ...rest }) => {
       queries[attribute] = value;
 
       // Push our updated query params to the router
-      router.push(
+      router.replace(
         {
           query: queries,
         },
