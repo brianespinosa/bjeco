@@ -10,7 +10,6 @@ const CuttingBoard = () => {
         <title>Cutting Board</title>
       </Head>
 
-      <h1>CuttingBoard</h1>
       <AttrSlider label='Rows' attribute='rows' defaultValue={8} />
       <AttrSlider label='Columns' attribute='columns' defaultValue={6} />
 
