@@ -17,14 +17,6 @@ const marks = {
   10: '',
   11: '',
   12: '',
-  13: '',
-  14: '',
-  15: '',
-  16: '',
-  17: '',
-  18: '',
-  19: '',
-  20: '',
 };
 /* eslint-enable sort-keys*/
 
@@ -63,7 +55,7 @@ const AttributeSlider = ({ attribute, label, defaultValue, ...rest }) => {
         {...rest}
         marks={marks}
         tipFormatter={(value) => value + ' ' + label}
-        max={20}
+        max={12}
         min={1}
         onAfterChange={setValue}
         defaultValue={defaultValue}
