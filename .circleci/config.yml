@@ -66,13 +66,13 @@ workflows:
   quality:
     jobs:
       - install
-      - lint:
-          requires:
-            - install
+      # - lint:
+      #     requires:
+      #       - install
       # - test:
       #     requires:
       #       - install
       - build:
           requires:
-            - lint
+            - install
             # - test
