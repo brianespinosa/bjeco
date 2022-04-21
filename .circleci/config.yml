@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@3.0.1
+  node: circleci/node@5.0.2
 
 jobs:
   install:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
-          pkg-manager: yarn
+          pkg-manager: yarn-berry
       - save_cache:
           key: bjeco-INSTALLED-{{ .Revision }}
           paths:
@@ -34,20 +34,20 @@ jobs:
   #     - store_artifacts:
   #         path: ./coverage
 
-  lint:
-    executor:
-      name: node/default
-      tag: 'lts'
-    steps:
-      - restore_cache:
-          key: bjeco-INSTALLED-{{ .Revision }}
-      - run:
-          name: Run Eslint
-          command: yarn lint --format junit --output-file ./coverage/eslint.xml
-      - store_test_results:
-          path: ./coverage
-      - store_artifacts:
-          path: ./coverage
+  # lint:
+  #   executor:
+  #     name: node/default
+  #     tag: 'lts'
+  #   steps:
+  #     - restore_cache:
+  #         key: bjeco-INSTALLED-{{ .Revision }}
+  #     - run:
+  #         name: Run Eslint
+  #         command: yarn lint --format junit --output-file ./coverage/eslint.xml
+  #     - store_test_results:
+  #         path: ./coverage
+  #     - store_artifacts:
+  #         path: ./coverage
 
   build:
     executor:
@@ -66,13 +66,13 @@ workflows:
   quality:
     jobs:
       - install
-      - lint:
-          requires:
-            - install
+      # - lint:
+      #     requires:
+      #       - install
       # - test:
       #     requires:
       #       - install
       - build:
           requires:
-            - lint
+            - install
             # - test
