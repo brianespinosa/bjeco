@@ -57,10 +57,10 @@ yarn-error.log*
 # vercel
 .vercel
 
-# yarn - Not using Zero Installs
+# yarn - Zero Installs
 # https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
-.pnp.*
 .yarn/*
+!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
