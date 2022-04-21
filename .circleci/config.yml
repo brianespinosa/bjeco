@@ -34,20 +34,20 @@ jobs:
   #     - store_artifacts:
   #         path: ./coverage
 
-  lint:
-    executor:
-      name: node/default
-      tag: 'lts'
-    steps:
-      - restore_cache:
-          key: bjeco-INSTALLED-{{ .Revision }}
-      - run:
-          name: Run Eslint
-          command: yarn lint --format junit --output-file ./coverage/eslint.xml
-      - store_test_results:
-          path: ./coverage
-      - store_artifacts:
-          path: ./coverage
+  # lint:
+  #   executor:
+  #     name: node/default
+  #     tag: 'lts'
+  #   steps:
+  #     - restore_cache:
+  #         key: bjeco-INSTALLED-{{ .Revision }}
+  #     - run:
+  #         name: Run Eslint
+  #         command: yarn lint --format junit --output-file ./coverage/eslint.xml
+  #     - store_test_results:
+  #         path: ./coverage
+  #     - store_artifacts:
+  #         path: ./coverage
 
   build:
     executor:
