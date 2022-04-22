@@ -30,6 +30,7 @@ class MyDocument extends Document {
             type='image/png'
           />
           <link href='/site.webmanifest' rel='manifest' />
+          <meta name='theme-color' content='#2b4c7e' />
         </Head>
         <body>
           <Main />
