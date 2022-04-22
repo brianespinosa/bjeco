@@ -30,10 +30,6 @@ class MyDocument extends Document {
             type='image/png'
           />
           <link href='/site.webmanifest' rel='manifest' />
-
-          <style>
-            {`* { box-sizing: border-box;} a {color: inherit; text-decoration: none;} html,body,#__next {height: 100%;} body {background-color: #2b4c7e; color: #dce0e6; font-family: sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}`}
-          </style>
         </Head>
         <body>
           <Main />
