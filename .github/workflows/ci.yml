@@ -11,13 +11,13 @@ env:
 jobs:
   main:
     if: ${{ github.event_name != 'pull_request' }}
-    uses: ./.github/workflows/jobs/nx-build.yml
+    uses: ./.github/workflows/nx-build.yml
 
   pr:
     if: ${{ github.event_name == 'pull_request' }}
-    uses: ./.github/workflows/jobs/nx-build.yml
+    uses: ./.github/workflows/nx-build.yml
     with:
       git-ref: ${{ github.event.pull_request.head.ref }}
 
   agents:
-    uses: ./.github/workflows/jobs/nx-agents.yml
+    uses: ./.github/workflows/nx-agents.yml
