@@ -12,7 +12,8 @@
         "outputPath": "dist/apps/bjeco"
       },
       "configurations": {
-        "production": {}
+        "production": {},
+        "development": {}
       }
     },
     "serve": {
@@ -25,8 +26,13 @@
         "production": {
           "buildTarget": "bjeco:build:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "bjeco:build:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -38,7 +44,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/bjeco"],
       "options": {
-        "jestConfig": "apps/bjeco/jest.config.js",
+        "jestConfig": "apps/bjeco/jest.config.ts",
         "passWithNoTests": true
       }
     },
