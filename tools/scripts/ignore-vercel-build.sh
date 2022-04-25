@@ -17,9 +17,9 @@ npx nx affected:apps --plain --base HEAD~1 --head HEAD | grep $APP -q
 IS_AFFECTED=$?
 
 if [ $IS_AFFECTED -eq 1 ]; then
-  echo "🛑 - Build cancelled"
+  echo "🛑 - Cancelled: No changes to $APP"
   exit 0
 elif [ $IS_AFFECTED -eq 0 ]; then
-  echo "✅ - Build can proceed"
+  echo "✅ - Building $APP"
   exit 1
 fi
