@@ -39,6 +39,9 @@
     }
   },
   "emmet.triggerExpansionOnTab": true,
+  "files.associations": {
+    "CODEOWNERS*": "plaintext"
+  },
   "git.autofetch": true,
   "prettier.requireConfig": true,
   "jest.coverageColors": {
