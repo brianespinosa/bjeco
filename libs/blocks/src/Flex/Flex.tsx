@@ -1,7 +1,7 @@
 import FlexItem from './FlexItem';
 import styles from './Flex.module.scss';
 import clsx from 'clsx';
-import { Role, RoleProps } from 'ariakit/Role';
+import { Role, RoleProps } from 'ariakit/role';
 
 type SpaceOptions = 'around' | 'between' | 'end' | 'evenly' | 'start';
 
