@@ -1912,6 +1912,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@floating-ui/core@npm:0.6.2"
+  checksum: b3e1844da852fe141cfa4163026a7c5ffb4399a96105340dffdd5b76dcafea72c6221a06b4674c2b500bc776adc9d9e4ed39dba55e7d844d9507d994c0af743a
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:0.4.5":
+  version: 0.4.5
+  resolution: "@floating-ui/dom@npm:0.4.5"
+  dependencies:
+    "@floating-ui/core": ^0.6.2
+  checksum: 3024aba55fe7ee78b429a6a5d61f5719a6bb2acc79c8a33304b9d30c443efba3a5288acaf9003402e31ee97a533eda97c30a0f2c97e9e54c697df9b80a23dad8
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -4647,6 +4663,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ariakit-utils@npm:0.17.0-next.17":
+  version: 0.17.0-next.17
+  resolution: "ariakit-utils@npm:0.17.0-next.17"
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0
+  checksum: e92f2fbc9885c56fcfb3436c536e7d323d9f825cff03e5ce8f91aeb296d4c304f778d2b339125b09af26f2ff3d75a3354a74f35d299d675c9f48b42f75cb6fb0
+  languageName: node
+  linkType: hard
+
+"ariakit@npm:2.0.0-next.24":
+  version: 2.0.0-next.24
+  resolution: "ariakit@npm:2.0.0-next.24"
+  dependencies:
+    "@floating-ui/dom": 0.4.5
+    ariakit-utils: 0.17.0-next.17
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  checksum: 6de1906bf317a7a58cbed1884950ae88c91ce266a27c22182699a0cc489b9f25e015add160ab341641bb972bb45a6ad61fd2dbe7fae6a7ea90d5a9e42e94e28d
+  languageName: node
+  linkType: hard
+
 "array-flatten@npm:1.1.1":
   version: 1.1.1
   resolution: "array-flatten@npm:1.1.1"
@@ -5142,7 +5180,9 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ~5.18.0
     "@typescript-eslint/parser": ~5.18.0
     antd: 4.6.3
+    ariakit: 2.0.0-next.24
     babel-jest: 27.5.1
+    clsx: 1.1.1
     core-js: ^3.6.5
     cypress: ^9.1.0
     eslint: ~8.12.0
@@ -5170,6 +5210,7 @@ __metadata:
     sass: 1.50.1
     stylelint: 14.7.1
     ts-jest: 27.1.4
+    ts-node: 9.1.1
     tslib: ^2.0.0
     typescript: ~4.6.2
   languageName: unknown
@@ -5706,6 +5747,13 @@ __metadata:
   dependencies:
     is-regexp: ^2.0.0
   checksum: 3624905a98920ad5c196080f4ea4379fa42b12f3b1d1272d958bb79c194508d2aec85160c25846f0016ca861a064316b213a565cf53b81a513047f89cf877803
+  languageName: node
+  linkType: hard
+
+"clsx@npm:1.1.1":
+  version: 1.1.1
+  resolution: "clsx@npm:1.1.1"
+  checksum: ff052650329773b9b245177305fc4c4dc3129f7b2be84af4f58dc5defa99538c61d4207be7419405a5f8f3d92007c954f4daba5a7b74e563d5de71c28c830063
   languageName: node
   linkType: hard
 
@@ -15926,7 +15974,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:~9.1.1":
+"ts-node@npm:9.1.1, ts-node@npm:~9.1.1":
   version: 9.1.1
   resolution: "ts-node@npm:9.1.1"
   dependencies:

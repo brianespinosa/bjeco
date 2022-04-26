@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "bjeco": "apps/bjeco",
-    "bjeco-e2e": "apps/bjeco-e2e"
+    "bjeco-e2e": "apps/bjeco-e2e",
+    "blocks": "libs/blocks"
   }
 }
