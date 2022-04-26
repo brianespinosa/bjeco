@@ -1,4 +1,4 @@
-import { Heading, HeadingLevel } from 'ariakit/Heading';
+import { Heading, HeadingLevel } from 'ariakit/heading';
 import { Role, RoleProps } from 'ariakit/Role';
 import clsx from 'clsx';
 import styles from './Section.module.scss';
