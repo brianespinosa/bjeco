@@ -1,0 +1,28 @@
+{
+  "root": "apps/blocks-e2e",
+  "sourceRoot": "apps/blocks-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/blocks-e2e/cypress.json",
+        "devServerTarget": "blocks:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "blocks:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/blocks-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["blocks"]
+}
