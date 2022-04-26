@@ -50,6 +50,10 @@
   "stylelint": {
     "extends": "@bjeco/stylelint-config"
   },
+  "resolutions": {
+    "glob-parent": "5.1.2",
+    "nth-check": "2.0.1"
+  },
   "dependencies": {
     "antd": "4.6.3",
     "ariakit": "2.0.0-next.24",
