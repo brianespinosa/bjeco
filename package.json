@@ -8,6 +8,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "build:storybook": "nx run blocks:build-storybook",
     "test:bjeco": "nx run bjeco:test",
     "test:blocks": "nx run blocks:test",
     "e2e:bjeco": "nx e2e bjeco-e2e",
@@ -100,6 +101,7 @@
     "@typescript-eslint/parser": "~5.18.0",
     "babel-jest": "27.5.1",
     "babel-loader": "8.1.0",
+    "chromatic": "6.5.4",
     "cypress": "^9.1.0",
     "eslint": "~8.12.0",
     "eslint-config-next": "12.1.5",
