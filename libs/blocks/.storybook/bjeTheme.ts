@@ -4,7 +4,7 @@ const color = {
   dark: '#1f1f20',
   primary: '#2b4c7e',
   secondary: '#567ebc',
-  grey: '#606d80',
+  grey: '#9bb0cf',
   light: '#dce0e6',
 };
 
@@ -33,8 +33,8 @@ export default create({
 
   // Toolbar default and active colors
   barTextColor: color.light,
-  barSelectedColor: '#fff',
-  barBg: color.secondary,
+  barSelectedColor: color.primary,
+  barBg: color.grey,
 
   // Form colors
   // inputBg: '#dce0e6',
