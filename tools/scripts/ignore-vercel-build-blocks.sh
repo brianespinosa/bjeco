@@ -1,6 +1,6 @@
 
 # Name of the app to check. Change this to your Vercel application name!
-APP=blocks
+LIB=blocks
 
 # Determine version of Nx installed
 NX_VERSION=$(node -e "console.log(require('./package.json').devDependencies['@nrwl/workspace'])")
@@ -12,15 +12,15 @@ TS_VERSION=$(node -e "console.log(require('./package.json').devDependencies['typ
 # SHOULD NOT NEED THE ABOVE STEPS AS WE HAVE ZERO INSTALLS ENABLED WITH YARN
 
 # Run the affected command, comparing latest commit to the one before that
-npx nx affected:libs --plain --base HEAD~1 --head HEAD | grep $APP -q
+npx nx affected:libs --plain --base HEAD~1 --head HEAD | grep $LIB -q
 
 # Store result of the previous command (grep)
 IS_AFFECTED=$?
 
 if [ $IS_AFFECTED -eq 1 ]; then
-  echo "🛑 - Cancelled: No changes to $APP"
+  echo "🛑 - Cancelled: No changes to $LIB"
   exit 0
 elif [ $IS_AFFECTED -eq 0 ]; then
-  echo "✅ - Building $APP"
+  echo "✅ - Building $LIB"
   exit 1
 fi
