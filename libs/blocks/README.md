@@ -1,6 +1,6 @@
-# blocks
+# [blocks](https://blocks.bje.co)
 
-This library was generated with [Nx](https://nx.dev).
+Reusable component building blocks for personal web projects. Relies mostly on [`ariakit`](https://github.com/ariakit/ariakit) for accessibility.
 
 ## Running unit tests
 

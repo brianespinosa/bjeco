@@ -1,0 +1,79 @@
+$size: 48px;
+$speed: 500ms;
+$ball-size: $size / 4;
+$gap-size: $size / 8;
+
+._ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.Suspending {
+  display: inline-block;
+  position: relative;
+  width: round($size);
+  height: round($size);
+
+  div {
+    position: absolute;
+    top: round(($size - $ball-size) * 0.5);
+    width: round($ball-size);
+    height: round($ball-size);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+    &:nth-child(1) {
+      left: round($gap-size);
+      animation: ellipsis-enter $speed infinite;
+    }
+
+    &:nth-child(2) {
+      left: round($gap-size);
+      animation: ellipsis-move $speed infinite;
+    }
+
+    &:nth-child(3) {
+      left: round($gap-size * 4);
+      animation: ellipsis-move $speed infinite;
+    }
+
+    &:nth-child(4) {
+      left: round($gap-size * 7);
+      animation: ellipsis-exit $speed infinite;
+    }
+  }
+}
+
+@keyframes ellipsis-enter {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ellipsis-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(round($gap-size * 3), 0);
+  }
+}
+
+@keyframes ellipsis-exit {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
