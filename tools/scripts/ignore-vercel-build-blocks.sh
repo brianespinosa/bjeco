@@ -18,9 +18,9 @@ npx nx affected:libs --plain --base HEAD~1 --head HEAD | grep $LIB -q
 IS_AFFECTED=$?
 
 if [ $IS_AFFECTED -eq 1 ]; then
-  echo "🛑 - Cancelled: No changes to $LIB"
+  echo "🛑 - Cancelled: No changes to library $LIB"
   exit 0
 elif [ $IS_AFFECTED -eq 0 ]; then
-  echo "✅ - Building $LIB"
+  echo "✅ - Building library $LIB"
   exit 1
 fi
