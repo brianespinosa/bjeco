@@ -11,13 +11,11 @@ npm install -D @nrwl/workspace@$NX_VERSION --prefer-offline
 npm install -D typescript@$TS_VERSION --prefer-offline
 
 # Run the affected command
-npx nx affected:libs --plain
-npx nx affected:libs --plain | grep $LIB -q
+npx nx affected:libs --plain --base HEAD~1 --head HEAD
+npx nx affected:libs --plain --base HEAD~1 --head HEAD | grep $LIB -q
 
 # Store result of the previous command (grep)
 IS_AFFECTED=$?
-
-echo "Affected: $IS_AFFECTED"
 
 if [ $IS_AFFECTED -eq 1 ]; then
   echo "🛑 - Cancelled: No changes to $LIB library"
