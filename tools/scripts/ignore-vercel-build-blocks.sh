@@ -7,13 +7,12 @@ NX_VERSION=$(node -e "console.log(require('./package.json').devDependencies['@nr
 TS_VERSION=$(node -e "console.log(require('./package.json').devDependencies['typescript'])")
 
 # Install @nrwl/workspace in order to run the affected command
-# npm install -D @nrwl/workspace@$NX_VERSION --prefer-offline
-# npm install -D typescript@$TS_VERSION --prefer-offline
+npm install -D @nrwl/workspace@$NX_VERSION --prefer-offline
+npm install -D typescript@$TS_VERSION --prefer-offline
 
 # Run the affected command
-yarn install
-yarn run nx affected:libs --plain
-yarn run nx affected:libs --plain | grep $LIB -q
+npx nx affected:libs --plain
+npx nx affected:libs --plain | grep $LIB -q
 
 # Store result of the previous command (grep)
 IS_AFFECTED=$?
