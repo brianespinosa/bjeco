@@ -14,6 +14,8 @@ npx nx affected:libs --plain | grep $LIB -q
 # Store result of the previous command (grep)
 IS_AFFECTED=$?
 
+echo "Affected: $IS_AFFECTED"
+
 if [ $IS_AFFECTED -eq 1 ]; then
   echo "🛑 - Cancelled: No changes to $LIB library"
   exit 0
