@@ -7,11 +7,11 @@ NX_VERSION=$(node -e "console.log(require('./package.json').devDependencies['@nr
 TS_VERSION=$(node -e "console.log(require('./package.json').devDependencies['typescript'])")
 
 # Install @nrwl/workspace in order to run the affected command
-npm install -D @nrwl/workspace@$NX_VERSION --prefer-offline
-npm install -D typescript@$TS_VERSION --prefer-offline
+# npm install -D @nrwl/workspace@$NX_VERSION --prefer-offline
+# npm install -D typescript@$TS_VERSION --prefer-offline
+# SHOULD NOT NEED THE ABOVE STEPS AS WE HAVE ZERO INSTALLS ENABLED WITH YARN
 
 # Run the affected command
-npx nx affected:libs --plain --base HEAD~1 --head HEAD
 npx nx affected:libs --plain --base HEAD~1 --head HEAD | grep $LIB -q
 
 # Store result of the previous command (grep)
