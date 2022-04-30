@@ -9,6 +9,7 @@ TS_VERSION=$(node -e "console.log(require('./package.json').devDependencies['typ
 # No need to install nx as we are using yarn zero installs
 
 # Run the affected command
+npx nx affected:libs --plain
 npx nx affected:libs --plain | grep $LIB -q
 
 # Store result of the previous command (grep)
