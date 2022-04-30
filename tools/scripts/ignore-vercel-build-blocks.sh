@@ -6,11 +6,13 @@ LIB=blocks
 NX_VERSION=$(node -e "console.log(require('./package.json').devDependencies['@nrwl/workspace'])")
 TS_VERSION=$(node -e "console.log(require('./package.json').devDependencies['typescript'])")
 
-# No need to install nx as we are using yarn zero installs
+# Install @nrwl/workspace in order to run the affected command
+# npm install -D @nrwl/workspace@$NX_VERSION --prefer-offline
+# npm install -D typescript@$TS_VERSION --prefer-offline
 
 # Run the affected command
-npx nx affected:libs --plain
-npx nx affected:libs --plain | grep $LIB -q
+yarn run nx affected:libs --plain
+yarn run nx affected:libs --plain | grep $LIB -q
 
 # Store result of the previous command (grep)
 IS_AFFECTED=$?
