@@ -11,6 +11,7 @@ TS_VERSION=$(node -e "console.log(require('./package.json').devDependencies['typ
 # npm install -D typescript@$TS_VERSION --prefer-offline
 
 # Run the affected command
+yarn install
 yarn run nx affected:libs --plain
 yarn run nx affected:libs --plain | grep $LIB -q
 
