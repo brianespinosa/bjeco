@@ -1,0 +1,17 @@
+._ {
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// Leave these styles for potential use if we check for string types above or below
+// .Above,
+// .Below {
+//   font-size: 0.75em;
+//   font-weight: 400;
+//   color: #666;
+// }

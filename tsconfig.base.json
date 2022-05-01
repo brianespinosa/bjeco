@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bjeco/blocks": ["libs/blocks/src/index.ts"]
+      "@bjeco/blocks": ["libs/blocks/src/index.ts"],
+      "@bjeco/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -15,7 +15,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        destination: '/calc/cutting-board',
+        destination: '/calc/divider',
         permanent: true,
         source: '/calc',
       },

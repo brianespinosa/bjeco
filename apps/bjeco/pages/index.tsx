@@ -1,11 +1,11 @@
 import Logo from '../components/Logo';
-import Main from '../components/Main';
+import styles from './Landing.module.scss';
 
-const Home = () => {
+const Home = (): JSX.Element => {
   return (
-    <Main>
+    <div className={styles['_']}>
       <Logo />
-    </Main>
+    </div>
   );
 };
 

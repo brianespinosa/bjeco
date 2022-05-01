@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import { Flex } from './Flex';
+import { Boundaries } from './Boundaries';
 
-describe('Flex', () => {
+describe('Boundaries', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Flex />);
+    const { baseElement } = render(<Boundaries />);
     expect(baseElement).toBeTruthy();
   });
 });

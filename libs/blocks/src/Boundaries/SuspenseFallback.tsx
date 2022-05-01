@@ -1,6 +1,6 @@
 import styles from './SuspenseFallback.module.scss';
 
-const SuspenseFallback: React.VoidFunctionComponent = () => {
+const SuspenseFallback = (): JSX.Element => {
   return (
     <div className={styles['_']}>
       <div className={styles['Suspending']}>

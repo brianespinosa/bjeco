@@ -1,17 +1,10 @@
-import { Suspense } from 'react';
+import { Suspense, SuspenseProps } from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 
 import DefaultErrorFallback from './ErrorFallback';
 import DefaultSuspenseFallback from './SuspenseFallback';
 
-// TODO: Convert to util
-const isDOM = Boolean(
-  typeof window !== 'undefined' &&
-    window.document &&
-    window.document.createElement
-);
-
-export interface BoundaryProps {
+export type BoundariesProps = {
   /**
    * Can provide an ErrorComponent to show as a fallback.
    */
@@ -19,28 +12,21 @@ export interface BoundaryProps {
   /**
    * Can provide an SuspenseComponent to show as a fallback.
    */
-  SuspenseComponent?: React.VoidFunctionComponent;
+  SuspenseComponent?: React.ComponentType<SuspenseProps>;
 
   children?: React.ReactNode;
-}
+};
 
-const Boundaries = ({
+export const Boundaries = ({
   ErrorComponent = DefaultErrorFallback,
   SuspenseComponent = DefaultSuspenseFallback,
   children,
-}: BoundaryProps) => {
-  // Make sure we are not trying any of this on the server in any SSR situations.
-  if (isDOM) {
-    return (
-      <Suspense fallback={<SuspenseComponent />}>
-        <ErrorBoundary FallbackComponent={ErrorComponent}>
-          {children}
-        </ErrorBoundary>
-      </Suspense>
-    );
-  } else {
-    return null;
-  }
+}: BoundariesProps): JSX.Element => {
+  return (
+    <Suspense fallback={<SuspenseComponent />}>
+      <ErrorBoundary FallbackComponent={ErrorComponent}>
+        {children}
+      </ErrorBoundary>
+    </Suspense>
+  );
 };
-
-export default Boundaries;
