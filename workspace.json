@@ -4,6 +4,7 @@
     "bjeco": "apps/bjeco",
     "bjeco-e2e": "apps/bjeco-e2e",
     "blocks": "libs/blocks",
-    "blocks-e2e": "apps/blocks-e2e"
+    "blocks-e2e": "apps/blocks-e2e",
+    "utils": "libs/utils"
   }
 }

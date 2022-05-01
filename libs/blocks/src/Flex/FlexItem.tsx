@@ -1,22 +1,22 @@
-import { ReactChild, ReactChildren, ReactElement, cloneElement } from 'react';
+import { ReactElement, cloneElement } from 'react';
 import styles from './Flex.module.scss';
 import clsx from 'clsx';
 
-export interface FlexItemProps extends ReactElement {
-  children: ReactChild | ReactChildren;
+export type FlexItemProps = {
+  children: React.ReactNode;
   className?: string;
   grow?: boolean;
   push?: boolean;
   shrink?: boolean;
-}
+};
 
-export function FlexItem({
+export const FlexItem = ({
   grow = false,
   push = false,
   shrink = false,
   children,
   ...rest
-}: FlexItemProps) {
+}: FlexItemProps): JSX.Element => {
   const isChildString = typeof children === 'string';
 
   const reactElement = isChildString ? <div>{children}</div> : children;
@@ -34,8 +34,6 @@ export function FlexItem({
     ...rest,
     className: classList,
   });
-}
+};
 
 FlexItem.displayName = 'Flex.Item';
-
-export default FlexItem;

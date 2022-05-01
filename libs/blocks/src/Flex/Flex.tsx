@@ -1,4 +1,4 @@
-import FlexItem from './FlexItem';
+import { FlexItem } from './FlexItem';
 import styles from './Flex.module.scss';
 import clsx from 'clsx';
 import { Role, RoleProps } from 'ariakit/role';
@@ -7,7 +7,7 @@ type SpaceOptions = 'around' | 'between' | 'end' | 'evenly' | 'start';
 
 type VAlignOptions = 'end' | 'stretch' | 'center' | 'start';
 
-export interface FlexProps extends RoleProps {
+export type FlexProps = RoleProps & {
   /**
    * Items in the container can align in a vertical column.
    */
@@ -26,10 +26,9 @@ export interface FlexProps extends RoleProps {
    * {@link VAlignOptions}
    */
   vAlign?: VAlignOptions;
-}
+};
 
-export function Flex({
-  as = 'div',
+export const Flex = ({
   children,
   className,
   column = false,
@@ -37,7 +36,7 @@ export function Flex({
   space = 'between',
   vAlign = 'start',
   ...rest
-}: FlexProps) {
+}: FlexProps): JSX.Element | null => {
   // Bail out of rendering any of our markup if children is null or undefined
   if (children == null) {
     return null;
@@ -53,12 +52,10 @@ export function Flex({
   );
 
   return (
-    <Role {...rest} as={as} className={classList}>
+    <Role {...rest} className={classList}>
       {children}
     </Role>
   );
-}
+};
 
 Flex.Item = FlexItem;
-
-export default Flex;

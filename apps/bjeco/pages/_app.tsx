@@ -4,11 +4,12 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
 import { AnimatePresence } from 'framer-motion';
-
+import { HeadingLevel } from 'ariakit/heading';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Boundaries } from '@bjeco/blocks';
 
-function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
 
   useEffect(() => {
@@ -36,18 +37,20 @@ function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <>
+    <Boundaries>
       <Head>
         <title>bje</title>
       </Head>
-      <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <Component {...pageProps} />
-      </AnimatePresence>
-    </>
+      <HeadingLevel>
+        <AnimatePresence
+          exitBeforeEnter
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component {...pageProps} />
+        </AnimatePresence>
+      </HeadingLevel>
+    </Boundaries>
   );
-}
+};
 
 export default App;

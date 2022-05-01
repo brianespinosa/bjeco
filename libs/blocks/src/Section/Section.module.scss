@@ -1,4 +1,18 @@
 ._ {
+  padding: 0 1em;
+
+  & > * + * {
+    margin-top: 1em;
+  }
+
+  &.basic {
+    padding: 0;
+
+    & > * + * {
+      margin-top: initial;
+    }
+  }
+
   & > :first-child {
     margin-top: 0;
   }

@@ -1,7 +1,10 @@
 import { useCallback } from 'react';
 import { FallbackProps } from 'react-error-boundary';
 
-const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
+const ErrorFallback = ({
+  error,
+  resetErrorBoundary,
+}: FallbackProps): JSX.Element => {
   // TODO: Convert to util
   const isDev = process.env['NODE_ENV'] === 'development';
   const handleTryAgain = useCallback(() => {

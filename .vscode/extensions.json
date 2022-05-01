@@ -5,6 +5,7 @@
     "firsttris.vscode-jest-runner",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
-    "jasonnutter.vscode-codeowners"
+    "jasonnutter.vscode-codeowners",
+    "stkb.rewrap"
   ]
 }

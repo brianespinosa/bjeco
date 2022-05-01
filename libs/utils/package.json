@@ -1,11 +1,11 @@
 {
-  "name": "@bjeco/blocks",
+  "name": "@bjeco/utils",
   "author": "Brian Espinosa <b@bje.co>",
   "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/brianespinosa/bjeco.git",
-    "directory": "libs/blocks"
+    "directory": "libs/utils"
   },
   "peerDependencies": {
     "react": "*"
