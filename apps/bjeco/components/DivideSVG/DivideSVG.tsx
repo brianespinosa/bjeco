@@ -7,7 +7,7 @@ const BORDER_WIDTH = 2;
 const HALF_BORDER = BORDER_WIDTH / 2;
 const COLOR = '#ffffff';
 
-const rand = '09aedf';
+const rand = 'sd65f4';
 const DIVIDER_ID = `divider_${rand}`;
 const SECTION_ID = `section_${rand}`;
 
