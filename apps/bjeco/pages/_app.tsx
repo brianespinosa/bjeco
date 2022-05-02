@@ -1,5 +1,5 @@
 import 'normalize.css';
-import './app.css';
+import './app.scss';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';

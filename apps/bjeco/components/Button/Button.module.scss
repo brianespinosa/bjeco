@@ -1,0 +1,40 @@
+._ {
+  display: inline-flex;
+  height: 2.5rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  border-style: none;
+  background-color: hsl(204, 100%, 40%);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: hsl(0, 0%, 100%);
+
+  &:hover {
+    background-color: hsl(204, 100%, 32%);
+  }
+
+  &:focus-visible,
+  &[data-focus-visible] {
+    outline: 2px solid hsl(204, 100%, 40%);
+    outline-offset: 2px;
+  }
+
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+  }
+
+  &.secondary {
+    background-color: hsla(204, 10%, 100%, 0%);
+    color: hsl(204, 10%, 10%);
+
+    &:hover {
+      background-color: hsla(204, 10%, 87%, 50%);
+    }
+  }
+}
