@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { useRef } from 'react';
 import Head from 'next/head';
 import Header from '../../components/Header';
 import Main from '../../components/Main';
@@ -13,9 +13,15 @@ const getFormStateAttributes = (formState, fieldName) => ({
   value: formState.values[fieldName],
 });
 
-const handleFocus = (event) => event.target.select();
-
 const Divider = (): JSX.Element => {
+  const svgRef = useRef(null);
+
+  const handleSVGScroll = () => svgRef.current.scrollIntoView();
+  const handleFocus = (event) => {
+    event.target.select();
+    handleSVGScroll();
+  };
+
   const formState = useFormState({
     defaultValues: {
       overallWidth: '12',
@@ -57,13 +63,15 @@ const Divider = (): JSX.Element => {
             sectionWidth,
           }}
         /> */}
-        <DivideSVG
-          dividerCount={getNumber('dividerCount')}
-          dividerWidth={getNumber('dividerWidth')}
-          overallWidth={getNumber('overallWidth')}
-          sectionCount={sectionCount}
-          sectionWidth={sectionWidth}
-        />
+        <div ref={svgRef}>
+          <DivideSVG
+            dividerCount={getNumber('dividerCount')}
+            dividerWidth={getNumber('dividerWidth')}
+            overallWidth={getNumber('overallWidth')}
+            sectionCount={sectionCount}
+            sectionWidth={sectionWidth}
+          />
+        </div>
         <Form state={formState} className='form'>
           <FormField
             {...getFormStateAttributes(formState, 'overallWidth')}
