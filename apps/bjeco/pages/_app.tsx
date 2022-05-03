@@ -40,6 +40,10 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     <Boundaries>
       <Head>
         <title>bje</title>
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, maximum-scale=5'
+        />
       </Head>
       <HeadingLevel>
         <AnimatePresence

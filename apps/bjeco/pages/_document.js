@@ -11,10 +11,6 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           <link href='/favicon.ico' rel='icon' />
-          <meta
-            name='viewport'
-            content='width=device-width, initial-scale=1, maximum-scale=5'
-          />
           <link
             href='/apple-touch-icon.png'
             rel='apple-touch-icon'
