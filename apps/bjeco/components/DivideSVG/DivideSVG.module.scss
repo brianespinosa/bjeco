@@ -1,0 +1,11 @@
+._ {
+  font-size: calc(2.5rem + (8 - 16) * ((100vw - 320px) / (640 - 320)));
+
+  @media (min-width: 641px) {
+    font-size: calc(1.75rem + (4 - 8) * ((100vw - 640px) / (960 - 640)));
+  }
+
+  @media (min-width: 960px) {
+    font-size: 1rem;
+  }
+}

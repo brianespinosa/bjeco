@@ -17,6 +17,10 @@ export type FlexProps = RoleProps & {
    */
   fluid?: boolean;
   /**
+   * The Flex items can have minimum space gaps defined.
+   */
+  gap?: string;
+  /**
    * Items can be configured to distribute the remaining space in the Flex container.
    * {@link SpaceOptions}
    */
@@ -33,6 +37,7 @@ export const Flex = ({
   className,
   column = false,
   fluid = true,
+  gap,
   space = 'between',
   vAlign = 'start',
   ...rest
@@ -52,7 +57,7 @@ export const Flex = ({
   );
 
   return (
-    <Role {...rest} className={classList}>
+    <Role {...rest} style={{ gap: gap }} className={classList}>
       {children}
     </Role>
   );

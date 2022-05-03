@@ -1,10 +1,12 @@
-import { Section } from '@bjeco/blocks';
 import styles from './Main.module.scss';
+import { HeadingLevel } from 'ariakit/heading';
 
 const Main = ({ children, ...rest }): JSX.Element => (
-  <Section title='Main' {...rest} className={styles._}>
-    {children}
-  </Section>
+  <HeadingLevel>
+    <main {...rest} className={styles._}>
+      {children}
+    </main>
+  </HeadingLevel>
 );
 
 export default Main;
