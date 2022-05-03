@@ -9,6 +9,7 @@ import {
 } from 'ariakit/form';
 
 export type FormFieldProps = FormInputProps & {
+  inputmode?: string;
   label: string;
 };
 
