@@ -70,7 +70,7 @@ const Divider = (): JSX.Element => {
             label='Overall Width'
             required
             type='number'
-            inputmode='numeric'
+            inputmode='decimal'
             onFocus={handleFocus}
             min={0}
             step='any'
@@ -80,7 +80,7 @@ const Divider = (): JSX.Element => {
             label='Divider Count (dadoes)'
             required
             type='number'
-            inputmode='numeric'
+            inputmode='decimal'
             min={0}
             onFocus={handleFocus}
             max={formState.values.overallWidth}
@@ -90,7 +90,7 @@ const Divider = (): JSX.Element => {
             label='Divider Width'
             required
             type='number'
-            inputmode='numeric'
+            inputmode='decimal'
             step='any'
             onFocus={handleFocus}
             min={0}
