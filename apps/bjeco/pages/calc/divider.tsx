@@ -1,10 +1,6 @@
 import { useRef } from 'react';
 import Head from 'next/head';
-import Header from '../../components/Header';
-import Main from '../../components/Main';
-import DivideSVG from '../../components/DivideSVG';
-// import Placeholder from '../../components/Placeholder';
-import FormField from '../../components/FormField';
+import { Header, Main, DivideSVG, FormField } from '../../components';
 import { Title } from '@bjeco/blocks';
 import { Form, useFormState } from 'ariakit/form';
 
@@ -78,7 +74,7 @@ const Divider = (): JSX.Element => {
             label='Overall Width'
             required
             type='number'
-            inputmode='decimal'
+            inputMode='decimal'
             onFocus={handleFocus}
             min={0}
             step='any'
@@ -88,7 +84,7 @@ const Divider = (): JSX.Element => {
             label='Divider Count (dadoes)'
             required
             type='number'
-            inputmode='decimal'
+            inputMode='decimal'
             min={0}
             onFocus={handleFocus}
             max={formState.values.overallWidth}
@@ -98,7 +94,7 @@ const Divider = (): JSX.Element => {
             label='Divider Width'
             required
             type='number'
-            inputmode='decimal'
+            inputMode='decimal'
             step='any'
             onFocus={handleFocus}
             min={0}

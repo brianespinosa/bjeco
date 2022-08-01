@@ -6,5 +6,6 @@
     "blocks": "libs/blocks",
     "blocks-e2e": "apps/blocks-e2e",
     "utils": "libs/utils"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

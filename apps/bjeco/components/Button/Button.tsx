@@ -12,7 +12,7 @@ export type ButtonProps = AriakitButtonProps & {
   variant?: ButtonVariants;
 };
 
-const Button = forwardRef<HTMLInputElement, ButtonProps>(
+export const Button = forwardRef<HTMLInputElement, ButtonProps>(
   ({ children, className, variant = 'primary', ...rest }, ref): JSX.Element => {
     return (
       <AriakitButton
@@ -27,5 +27,3 @@ const Button = forwardRef<HTMLInputElement, ButtonProps>(
 );
 
 Button.displayName = 'Button';
-
-export default Button;
