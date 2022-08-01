@@ -87,7 +87,7 @@ type DivideSVGProps = {
   sectionWidth: number;
 };
 
-const DivideSVG = ({
+export const DivideSVG = ({
   dividerCount,
   dividerWidth,
   overallWidth,
@@ -188,5 +188,3 @@ const DivideSVG = ({
     </svg>
   );
 };
-
-export default DivideSVG;

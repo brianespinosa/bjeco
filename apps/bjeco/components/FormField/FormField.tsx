@@ -9,11 +9,11 @@ import {
 } from 'ariakit/form';
 
 export type FormFieldProps = FormInputProps & {
-  inputmode?: string;
+  inputMode?: string;
   label: string;
 };
 
-const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
+export const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
   ({ children, className, name, label, ...rest }, ref): JSX.Element => {
     return (
       <div className={clsx('field', className)}>
@@ -26,5 +26,3 @@ const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
 );
 
 FormField.displayName = 'FormField';
-
-export default FormField;

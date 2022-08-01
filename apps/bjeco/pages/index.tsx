@@ -1,4 +1,4 @@
-import Logo from '../components/Logo';
+import { Logo } from '../components';
 import styles from './Landing.module.scss';
 
 const Home = (): JSX.Element => {
