@@ -1,18 +1,18 @@
-const nrwlConfig = require('@nrwl/react/plugins/bundle-rollup');
+import nrwlConfig from '@nrwl/react/plugins/bundle-rollup';
+// import { nodeResolve } from '@rollup/plugin-node-resolve';
+// import commonjs from '@rollup/plugin-commonjs';
+
+// const extensions = ['.ts', '.tsx', '.js', '.jsx', '.json'];
 
 module.exports = (config) => {
   const nxConfig = nrwlConfig(config);
 
-  nxConfig.output.inlineDynamicImports = false;
-  nxConfig.output.format = undefined;
-
-  console.log(nxConfig);
-
   return {
     ...nxConfig,
-    input: [
-      // nxConfig.input,
-      '/Users/bespinosa/Web/bjeco/libs/blocks/src/Flex/index.ts',
+    plugins: [
+      // nodeResolve({ extensions, preferBuiltins: false }),
+      // commonjs(),
+      ...nxConfig.plugins,
     ],
   };
 };

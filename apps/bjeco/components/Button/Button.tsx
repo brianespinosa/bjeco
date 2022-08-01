@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {
   Button as AriakitButton,
   ButtonProps as AriakitButtonProps,
-} from 'ariakit/button';
+} from 'ariakit';
 import styles from './Button.module.scss';
 
 type ButtonVariants = 'primary' | 'secondary' | 'invisible';

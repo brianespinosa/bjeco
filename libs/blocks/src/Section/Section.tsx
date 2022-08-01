@@ -1,5 +1,5 @@
-import { HeadingLevel } from 'ariakit/heading';
-import { Role, RoleProps } from 'ariakit/role';
+import { HeadingLevel } from 'ariakit';
+import { Role, RoleProps } from 'ariakit';
 import { Boundaries } from '../Boundaries';
 import { Title } from '../Title';
 import clsx from 'clsx';

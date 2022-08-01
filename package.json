@@ -8,6 +8,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "publish": "nx publish blocks",
     "build:storybook": "nx run blocks:build-storybook",
     "test:bjeco": "nx run bjeco:test",
     "test:blocks": "nx run blocks:test",
@@ -64,6 +65,7 @@
     "@nrwl/storybook": "14.5.1",
     "@nrwl/web": "14.5.1",
     "@nrwl/workspace": "14.5.1",
+    "@rollup/plugin-node-resolve": "13.3.0",
     "@storybook/addon-a11y": "6.5.9",
     "@storybook/addon-essentials": "6.5.9",
     "@storybook/builder-webpack5": "6.5.9",

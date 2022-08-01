@@ -1,4 +1,4 @@
-import { Heading } from 'ariakit/heading';
+import { Heading } from 'ariakit';
 import styles from './Header.module.scss';
 
 export const Header = (): JSX.Element => {

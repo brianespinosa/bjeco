@@ -1,14 +1,18 @@
 {
   "name": "@bjeco/blocks",
   "author": "Brian Espinosa <b@bje.co>",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/brianespinosa/bjeco.git",
     "directory": "libs/blocks"
   },
+  "devDependencies": {
+    "@bjeco/utils": "*"
+  },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-dom": "*"
   },
   "license": "MIT"
 }

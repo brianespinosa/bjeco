@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
 import { AnimatePresence } from 'framer-motion';
-import { HeadingLevel } from 'ariakit/heading';
+import { HeadingLevel } from 'ariakit';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Boundaries } from '@bjeco/blocks';

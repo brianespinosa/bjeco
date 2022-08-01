@@ -1,5 +1,5 @@
 import styles from './Main.module.scss';
-import { HeadingLevel } from 'ariakit/heading';
+import { HeadingLevel } from 'ariakit';
 
 const Main = ({ children, ...rest }): JSX.Element => (
   <HeadingLevel>

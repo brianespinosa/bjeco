@@ -6,7 +6,7 @@ import {
   FormError,
   FormInput,
   FormInputProps,
-} from 'ariakit/form';
+} from 'ariakit';
 
 export type FormFieldProps = FormInputProps & {
   inputMode?: string;
