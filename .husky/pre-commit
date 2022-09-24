@@ -3,3 +3,4 @@
 
 yarn lint-staged
 yarn nx affected --target=test
+yarn nx affected --target=e2e
