@@ -1,1 +1,1 @@
-export const getLogo = () => cy.get('svg');
+export const getLogo = () => cy.get('svg#bje');
