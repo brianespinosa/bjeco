@@ -9,6 +9,7 @@ const variants = {
 
 export const Logo = (): JSX.Element => (
   <motion.svg
+    id='bje'
     animate='enter'
     className={styles._}
     exit='exit'

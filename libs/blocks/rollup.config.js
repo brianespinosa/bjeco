@@ -1,6 +1,6 @@
-import nrwlConfig from '@nrwl/react/plugins/bundle-rollup';
-// import { nodeResolve } from '@rollup/plugin-node-resolve';
-// import commonjs from '@rollup/plugin-commonjs';
+const nrwlConfig = require('@nrwl/react/plugins/bundle-rollup');
+// const { nodeResolve } = require('@rollup/plugin-node-resolve');
+// const commonjs = require('rollup-plugin-commonjs');
 
 // const extensions = ['.ts', '.tsx', '.js', '.jsx', '.json'];
 
@@ -11,7 +11,6 @@ module.exports = (config) => {
     ...nxConfig,
     plugins: [
       // nodeResolve({ extensions, preferBuiltins: false }),
-      // commonjs(),
       ...nxConfig.plugins,
     ],
   };
