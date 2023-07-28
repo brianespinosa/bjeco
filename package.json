@@ -134,5 +134,5 @@
     "webpack": "5.88.2",
     "webpack-merge": "5.9.0"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.6.1"
 }
