@@ -22,6 +22,9 @@
     "nx-migrate": "yarn install && nx migrate --run-migrations",
     "postinstall": "husky install"
   },
+  "engines": {
+    "node": "18"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
