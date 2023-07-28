@@ -1,11 +1,12 @@
 {
+  "name": "blocks",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/blocks/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "buildableProjectDepsInPackageJsonType": "dependencies",
@@ -26,28 +27,25 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/blocks/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/blocks"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/blocks"],
       "options": {
         "jestConfig": "libs/blocks/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "libs/blocks/.storybook"
-        }
+        "configDir": "libs/blocks/.storybook"
       },
       "configurations": {
         "ci": {
@@ -56,14 +54,11 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/blocks",
-        "config": {
-          "configFolder": "libs/blocks/.storybook"
-        }
+        "configDir": "libs/blocks/.storybook",
+        "outputDir": "dist/storybook/blocks"
       },
       "configurations": {
         "ci": {
@@ -72,7 +67,7 @@
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "outputs": [],
       "options": {
         "command": "cd dist/libs/blocks && npm publish --tag=latest --access public "
