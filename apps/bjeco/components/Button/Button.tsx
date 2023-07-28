@@ -12,16 +12,14 @@ export type ButtonProps = AriakitButtonProps & {
   variant?: ButtonVariants;
 };
 
-export const Button = forwardRef<HTMLInputElement, ButtonProps>(
-  ({ children, className, variant = 'primary', ...rest }, ref): JSX.Element => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = 'primary', ...rest }, ref) => {
     return (
       <AriakitButton
         {...rest}
         ref={ref}
         className={clsx(styles['_'], styles[variant], className)}
-      >
-        {children}
-      </AriakitButton>
+      />
     );
   }
 );

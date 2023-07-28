@@ -1,8 +1,8 @@
 module.exports = {
-  stories: [],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
+    '@nx/react/plugins/storybook',
     // 'storybook-dark-mode',
   ],
   // uncomment the property below if you want to apply some webpack config globally
@@ -12,4 +12,11 @@ module.exports = {
   //   // Return the altered config
   //   return config;
   // },
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
+  },
 };
