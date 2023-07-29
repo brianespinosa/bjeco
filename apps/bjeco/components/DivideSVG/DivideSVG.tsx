@@ -94,8 +94,8 @@ export const DivideSVG = ({
   sectionCount,
   sectionWidth,
 }: DivideSVGProps): JSX.Element => {
-  const sectionArray = [...Array(sectionCount).keys()];
-  const dividerArray = [...Array(dividerCount).keys()];
+  const sectionArray = sectionCount ? [...Array(sectionCount).keys()] : [];
+  const dividerArray = dividerCount ? [...Array(dividerCount).keys()] : [];
 
   const scaleSection = (sectionWidth / overallWidth) * WIDTH;
   const scaleDivider = (dividerWidth / overallWidth) * WIDTH;

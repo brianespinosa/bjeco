@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
 import { AnimatePresence } from 'framer-motion';
-import { HeadingLevel } from 'ariakit';
+import { HeadingLevel } from '@ariakit/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Boundaries } from '@bjeco/blocks';
@@ -47,7 +47,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
       </Head>
       <HeadingLevel>
         <AnimatePresence
-          exitBeforeEnter
+          mode='wait'
           onExitComplete={() => window.scrollTo(0, 0)}
         >
           <Component {...pageProps} />
