@@ -1,4 +1,4 @@
-import { Heading, HeadingProps } from 'ariakit';
+import { Heading, HeadingProps } from '@ariakit/react';
 import { Flex } from '../Flex';
 import clsx from 'clsx';
 import styles from './Title.module.scss';

@@ -1,5 +1,5 @@
-import { HeadingLevel } from 'ariakit';
-import { Role, RoleProps } from 'ariakit';
+import { HeadingLevel } from '@ariakit/react';
+import { Role, RoleProps } from '@ariakit/react';
 import { Boundaries } from '../Boundaries';
 import { Title } from '../Title';
 import clsx from 'clsx';
@@ -54,7 +54,7 @@ export const Section = ({
   const SectionTag = title ? 'section' : 'div';
 
   const classList = clsx(
-    clsx(styles['_'], isBasic && styles['basic'], className)
+    clsx(styles['_'], isBasic && styles['basic'], className),
   );
 
   const sectionContent = (
