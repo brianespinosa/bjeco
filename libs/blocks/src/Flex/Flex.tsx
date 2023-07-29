@@ -1,7 +1,7 @@
 import { FlexItem } from './FlexItem';
 import styles from './Flex.module.scss';
 import clsx from 'clsx';
-import { Role, RoleProps } from 'ariakit';
+import { Role, RoleProps } from '@ariakit/react';
 
 type SpaceOptions = 'around' | 'between' | 'end' | 'evenly' | 'start';
 
@@ -53,7 +53,7 @@ export const Flex = ({
     fluid && [styles['fluid']],
     styles['space-' + space],
     styles['vAlign-' + vAlign],
-    className
+    className,
   );
 
   return (

@@ -1,47 +1,49 @@
+@use 'sass:math';
+
 $size: 48px;
 $speed: 500ms;
-$ball-size: $size / 4;
-$gap-size: $size / 8;
+$ball-size: $size * 0.25;
+$gap-size: $size * 0.125;
 
 ._ {
   display: flex;
+  height: 100%;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .Suspending {
-  display: inline-block;
   position: relative;
-  width: round($size);
-  height: round($size);
+  display: inline-block;
+  width: math.round($size);
+  height: math.round($size);
 
   div {
     position: absolute;
-    top: round(($size - $ball-size) * 0.5);
-    width: round($ball-size);
-    height: round($ball-size);
+    top: math.round(($size - $ball-size) * 0.5);
+    width: math.round($ball-size);
+    height: math.round($ball-size);
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    background: rgb(0 0 0 / 50%);
 
     &:nth-child(1) {
-      left: round($gap-size);
+      left: math.round($gap-size);
       animation: ellipsis-enter $speed infinite;
     }
 
     &:nth-child(2) {
-      left: round($gap-size);
+      left: math.round($gap-size);
       animation: ellipsis-move $speed infinite;
     }
 
     &:nth-child(3) {
-      left: round($gap-size * 4);
+      left: math.round($gap-size * 4);
       animation: ellipsis-move $speed infinite;
     }
 
     &:nth-child(4) {
-      left: round($gap-size * 7);
+      left: math.round($gap-size * 7);
       animation: ellipsis-exit $speed infinite;
     }
   }
@@ -49,12 +51,13 @@ $gap-size: $size / 8;
 
 @keyframes ellipsis-enter {
   0% {
-    transform: scale(0);
     opacity: 0;
+    transform: scale(0);
   }
+
   100% {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -62,18 +65,20 @@ $gap-size: $size / 8;
   0% {
     transform: translate(0, 0);
   }
+
   100% {
-    transform: translate(round($gap-size * 3), 0);
+    transform: translate(math.round($gap-size * 3), 0);
   }
 }
 
 @keyframes ellipsis-exit {
   0% {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
+
   100% {
-    transform: scale(0);
     opacity: 0;
+    transform: scale(0);
   }
 }
