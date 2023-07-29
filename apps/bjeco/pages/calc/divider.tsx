@@ -1,24 +1,28 @@
+'use client';
+
+import { Boundaries, Placeholder } from '@bjeco/blocks';
 import { useRef } from 'react';
 import Head from 'next/head';
 import { Header, Main, DivideSVG, FormField } from '../../components';
 import { Title } from '@bjeco/blocks';
-import { Form, useFormState } from 'ariakit/form';
+import { Form, useFormStore } from '@ariakit/react';
 
-const getFormStateAttributes = (formState, fieldName) => ({
-  name: formState.names[fieldName],
-  value: formState.values[fieldName],
+const getformStoreAttributes = (formStore, fieldName) => ({
+  name: formStore.names[fieldName],
+  value: formStore.useValue(fieldName),
 });
 
 const Divider = (): JSX.Element => {
   const svgRef = useRef(null);
 
   const handleSVGScroll = () => svgRef.current.scrollIntoView();
+
   const handleFocus = (event) => {
     event.target.select();
     handleSVGScroll();
   };
 
-  const formState = useFormState({
+  const formStore = useFormStore({
     defaultValues: {
       overallWidth: '12',
       dividerCount: '3',
@@ -26,17 +30,16 @@ const Divider = (): JSX.Element => {
     },
   });
 
-  formState.useSubmit(() => {
-    console.log(formState);
+  formStore.useSubmit(() => {
+    console.log(formStore);
   });
 
-  const getNumber = (attribute) => Number(formState.values[attribute]);
-
-  const dividerTotalWidth =
-    getNumber('dividerCount') * getNumber('dividerWidth');
-  const sectionCount = getNumber('dividerCount') + 1;
-  const sectionWidth =
-    (getNumber('overallWidth') - dividerTotalWidth) / sectionCount;
+  const overallWidth = Number(formStore.useValue('overallWidth'));
+  const dividerCount = Number(formStore.useValue('dividerCount'));
+  const dividerWidth = Number(formStore.useValue('dividerWidth'));
+  const dividerTotalWidth = dividerCount * dividerWidth;
+  const sectionCount = dividerCount + 1;
+  const sectionWidth = (overallWidth - dividerTotalWidth) / sectionCount;
 
   return (
     <>
@@ -51,8 +54,9 @@ const Divider = (): JSX.Element => {
           shelves, etc. Eventually additional configurations will be added for
           first/last space offset and first/last divider.
         </p>
-        {/* <Placeholder data={formState.values} />
-        <Placeholder
+        <em>v2</em>
+        {/* <Placeholder data={formStore.useState().value} /> */}
+        {/* <Placeholder
           data={{
             dividerTotalWidth,
             sectionCount,
@@ -60,17 +64,19 @@ const Divider = (): JSX.Element => {
           }}
         /> */}
         <div ref={svgRef}>
-          <DivideSVG
-            dividerCount={getNumber('dividerCount')}
-            dividerWidth={getNumber('dividerWidth')}
-            overallWidth={getNumber('overallWidth')}
-            sectionCount={sectionCount}
-            sectionWidth={sectionWidth}
-          />
+          <Boundaries>
+            <DivideSVG
+              dividerCount={dividerCount}
+              dividerWidth={dividerWidth}
+              overallWidth={overallWidth}
+              sectionCount={sectionCount}
+              sectionWidth={sectionWidth}
+            />
+          </Boundaries>
         </div>
-        <Form state={formState} className='form'>
+        <Form store={formStore} className='form'>
           <FormField
-            {...getFormStateAttributes(formState, 'overallWidth')}
+            {...getformStoreAttributes(formStore, 'overallWidth')}
             label='Overall Width'
             required
             type='number'
@@ -80,17 +86,17 @@ const Divider = (): JSX.Element => {
             step='any'
           />
           <FormField
-            {...getFormStateAttributes(formState, 'dividerCount')}
+            {...getformStoreAttributes(formStore, 'dividerCount')}
             label='Divider Count (dadoes)'
             required
             type='number'
             inputMode='decimal'
             min={0}
             onFocus={handleFocus}
-            max={formState.values.overallWidth}
+            max={formStore.useValue(formStore.names.overallWidth)}
           />
           <FormField
-            {...getFormStateAttributes(formState, 'dividerWidth')}
+            {...getformStoreAttributes(formStore, 'dividerWidth')}
             label='Divider Width'
             required
             type='number'
@@ -98,7 +104,7 @@ const Divider = (): JSX.Element => {
             step='any'
             onFocus={handleFocus}
             min={0}
-            max={getNumber('overallWidth') / getNumber('dividerCount')}
+            max={overallWidth / dividerCount}
           />
         </Form>
       </Main>

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {
   Button as AriakitButton,
   ButtonProps as AriakitButtonProps,
-} from 'ariakit';
+} from '@ariakit/react';
 import styles from './Button.module.scss';
 
 type ButtonVariants = 'primary' | 'secondary' | 'invisible';
@@ -21,7 +21,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={clsx(styles['_'], styles[variant], className)}
       />
     );
-  }
+  },
 );
 
 Button.displayName = 'Button';

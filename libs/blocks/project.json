@@ -9,21 +9,23 @@
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "outputPath": "dist/libs/blocks",
-        "tsConfig": "libs/blocks/tsconfig.lib.json",
-        "project": "libs/blocks/package.json",
-        "entryFile": "libs/blocks/src/index.ts",
-        "external": ["react/jsx-runtime"],
-        "rollupConfig": "libs/blocks/rollup.config.js",
-        "compiler": "babel",
         "assets": [
           {
             "glob": "libs/blocks/README.md",
             "input": ".",
             "output": "."
           }
-        ]
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "compiler": "swc",
+        "entryFile": "libs/blocks/src/index.ts",
+        "external": ["react/jsx-runtime", "react", "react-dom"],
+        "extractCss": false,
+        "format": ["esm", "cjs"],
+        "outputPath": "dist/libs/blocks",
+        "project": "libs/blocks/package.json",
+        "rollupConfig": "libs/blocks/rollup.config.js",
+        "tsConfig": "libs/blocks/tsconfig.lib.json"
       }
     },
     "lint": {
