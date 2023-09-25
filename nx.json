@@ -1,5 +1,4 @@
 {
-  "npmScope": "bjeco",
   "affected": {
     "defaultBase": "main"
   },
@@ -25,7 +24,6 @@
       }
     }
   },
-  "defaultProject": "bjeco",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
