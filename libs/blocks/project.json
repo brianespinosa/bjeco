@@ -25,7 +25,8 @@
         "outputPath": "dist/libs/blocks",
         "project": "libs/blocks/package.json",
         "rollupConfig": "libs/blocks/rollup.config.js",
-        "tsConfig": "libs/blocks/tsconfig.lib.json"
+        "tsConfig": "libs/blocks/tsconfig.lib.json",
+        "updateBuildableProjectDepsInPackageJson": true
       }
     },
     "lint": {
