@@ -16,7 +16,6 @@
             "output": "."
           }
         ],
-        "buildableProjectDepsInPackageJsonType": "dependencies",
         "compiler": "swc",
         "entryFile": "libs/blocks/src/index.ts",
         "external": ["react/jsx-runtime", "react", "react-dom"],
@@ -24,9 +23,8 @@
         "format": ["esm", "cjs"],
         "outputPath": "dist/libs/blocks",
         "project": "libs/blocks/package.json",
-        "rollupConfig": "libs/blocks/rollup.config.js",
-        "tsConfig": "libs/blocks/tsconfig.lib.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "tsConfig": "libs/blocks/tsconfig.lib.json"
       }
     },
     "lint": {
@@ -38,10 +36,16 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/blocks"],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "libs/blocks/jest.config.ts",
         "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
       }
     },
     "storybook": {
