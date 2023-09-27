@@ -1,6 +1,5 @@
 /* eslint-disable */
 export default {
-  testEnvironment: 'jsdom',
   displayName: 'blocks',
   preset: '../../jest.preset.js',
   transform: {

@@ -1,5 +1,7 @@
 import { create } from '@storybook/theming';
 
+import logo from './bje_blocks_logo.svg';
+
 const color = {
   dark: '#1f1f20',
   primary: '#2b4c7e',
@@ -16,7 +18,7 @@ export default create({
 
   brandTitle: 'Blocks',
   brandUrl: 'https://blocks.bje.co',
-  brandImage: '/bje_blocks_logo.svg',
+  brandImage: logo,
 
   // UI
   appBg: color.light,
