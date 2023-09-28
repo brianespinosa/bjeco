@@ -14,5 +14,5 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
-    uses: ./.github/workflows/local-lint.yml
+    uses: brianespinosa/actions/.github/workflows/dependabot-pr-nx-lint-fix.yml@main
     secrets: inherit
