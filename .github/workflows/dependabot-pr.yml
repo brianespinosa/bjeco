@@ -1,4 +1,4 @@
-name: Dependabot PRs
+name: Dependabot PR
 
 on: pull_request_target
 
@@ -8,4 +8,11 @@ jobs:
       pull-requests: write
       contents: write
     uses: brianespinosa/actions/.github/workflows/dependabot-pr-review.yml@main
+    secrets: inherit
+
+  dependabot-pr-nx-lint-fix:
+    permissions:
+      pull-requests: write
+      contents: write
+    uses: brianespinosa/actions/.github/workflows/dependabot-pr-nx-lint-fix.yml@main
     secrets: inherit
