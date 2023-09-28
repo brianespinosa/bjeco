@@ -55,7 +55,8 @@ jobs:
         run: |
           git config --local user.email "dependabot[bot]@users.noreply.github.com"
           git config --local user.name "dependabot[bot]"
-          git commit --amend
+          git add .
+          git commit --amend --no-edit --no-verify
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
