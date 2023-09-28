@@ -1,6 +1,21 @@
 ._ {
   display: flex;
 
+  .Item {
+    // Item modifiers
+    &.grow {
+      flex-grow: 1;
+    }
+
+    &.shrink {
+      flex-shrink: 0;
+    }
+
+    &.push {
+      margin-left: auto;
+    }
+  }
+
   & > :not(:last-child) {
     margin-right: 1rem;
   }
@@ -58,18 +73,5 @@
 
   &.vAlign-stretch {
     align-items: stretch;
-  }
-
-  .Item {
-    // Item modifiers
-    &.grow {
-      flex-grow: 1;
-    }
-    &.shrink {
-      flex-shrink: 0;
-    }
-    &.push {
-      margin-left: auto;
-    }
   }
 }

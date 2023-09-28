@@ -9,6 +9,7 @@
       "options": {
         "cacheableOperations": [
           "build",
+          "stylelint",
           "lint",
           "test",
           "e2e",
@@ -31,7 +32,11 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
+    "stylelint": {
+      "inputs": ["default", "^production", "{projectRoot}/stylelint.config.js"]
+    },
     "lint": {
+      "dependsOn": ["stylelint"],
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "build-storybook": {
