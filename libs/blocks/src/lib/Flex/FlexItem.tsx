@@ -27,7 +27,7 @@ export const FlexItem = ({
       [styles['grow']]: grow,
       [styles['push']]: push,
     },
-    rest.className
+    rest.className,
   );
 
   return cloneElement(reactElement as ReactElement, {

@@ -31,7 +31,11 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
+    "stylelint": {
+      "inputs": ["default", "^production", "{projectRoot}/stylelint.config.js"]
+    },
     "lint": {
+      "dependsOn": ["stylelint"],
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "build-storybook": {
