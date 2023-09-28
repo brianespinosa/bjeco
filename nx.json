@@ -9,6 +9,7 @@
       "options": {
         "cacheableOperations": [
           "build",
+          "stylelint",
           "lint",
           "test",
           "e2e",
