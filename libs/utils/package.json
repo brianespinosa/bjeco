@@ -7,8 +7,8 @@
     "url": "https://github.com/brianespinosa/bjeco.git",
     "directory": "libs/utils"
   },
+  "license": "MIT",
   "peerDependencies": {
-    "react": "*"
-  },
-  "license": "MIT"
+    "react": "^18"
+  }
 }
