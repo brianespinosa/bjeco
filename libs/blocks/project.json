@@ -16,14 +16,12 @@
             "output": "."
           }
         ],
-        "compiler": "swc",
+        "compiler": "babel",
         "entryFile": "libs/blocks/src/index.ts",
-        "external": ["react/jsx-runtime", "react", "react-dom"],
-        "extractCss": false,
+        "external": "all",
         "format": ["esm", "cjs"],
         "outputPath": "dist/libs/blocks",
         "project": "libs/blocks/package.json",
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "tsConfig": "libs/blocks/tsconfig.lib.json"
       }
     },
@@ -31,7 +29,16 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/blocks/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/blocks/**/*.{ts,tsx,js,jsx}",
+          "libs/blocks/package.json"
+        ]
+      }
+    },
+    "stylelint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx stylelint libs/blocks/**/*.{css,scss}"
       }
     },
     "test": {
