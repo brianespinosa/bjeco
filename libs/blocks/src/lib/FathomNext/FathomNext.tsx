@@ -34,7 +34,7 @@ function TrackPageView({ fathomId, includedDomains }: FathomNextProps) {
   return null;
 }
 
-export default function FathomNext(props: FathomNextProps) {
+export function FathomNext(props: FathomNextProps) {
   return (
     <Suspense fallback={null}>
       <TrackPageView {...props} />
