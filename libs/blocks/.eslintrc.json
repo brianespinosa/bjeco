@@ -6,7 +6,12 @@
       "files": ["{package,project}.json"],
       "parser": "jsonc-eslint-parser",
       "rules": {
-        "@nx/dependency-checks": ["error"]
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "ignoredDependencies": ["react", "react-dom"]
+          }
+        ]
       }
     },
     {

@@ -1,4 +1,5 @@
 export * from './lib/Boundaries';
+export * from './lib/ExternalLink';
 export * from './lib/FathomNext';
 export * from './lib/Flex';
 export * from './lib/Placeholder';
