@@ -70,7 +70,7 @@
     "@nx/webpack": "16.9.1",
     "@nx/workspace": "16.9.1",
     "@storybook/addon-a11y": "7.4.5",
-    "@storybook/addon-essentials": "7.4.5",
+    "@storybook/addon-essentials": "7.4.6",
     "@storybook/core-server": "7.4.5",
     "@storybook/nextjs": "7.4.5",
     "@storybook/react": "7.4.5",
